@@ -91,8 +91,8 @@ let messages = []; // Chuyển sang `let`
 
 // Cấu hình
 const config = {
-  displayDuration: 7000,
-  intervalTime: 7000,
+  displayDuration: 1000,
+  intervalTime: 17000,
 };
 
 let autoInterval;
@@ -221,6 +221,17 @@ function updateCountdown(targetDateStr) {
 setInterval(function () {
   updateCountdown("2025-10-19 07:00:00");
 }, 1000);
+
+window.addEventListener("DOMContentLoaded", function () {
+  // Lấy tham số name từ URL
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name");
+  // Hiển thị vào div PARAGRAPH94 nếu có giá trị
+  if (name) {
+    const el = document.querySelector("#w-amfdze1w .name");
+    if (el) el.textContent = name;
+  }
+});
 
 // Hiển thị icon quà tặng
 
